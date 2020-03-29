@@ -1,4 +1,4 @@
-#quorridor projet 1
+#quoridor projet 1
 
 import requests
 
@@ -37,11 +37,10 @@ def initialiser_partie(idul):
 
 # fonction 5 de 5
 def jouer_coup(id_partie, type_coup, position):
-    rep = requests.post(url=_url_base() + 'jouer/', data={'id': id_partie, 'type': type_coup, 'pos': position})
+    rep = requests.post(url=_url_base() + 'jouer/', data={'id': id, 'type': type_coup, 'pos': position})
     if rep.status_code == 200:
         #Bonne réponse du serveur, décoder JSON
         return rep.json()
     else:
         print(rep.json())
         return "ERROR {}".format(rep.status_code)
-                            
